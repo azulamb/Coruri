@@ -4,7 +4,7 @@
 ```
 npm -g install electron-prebuilt
 npm -g install electron-packager
-npm -i
+npm i
 ```
 
 ## Config
