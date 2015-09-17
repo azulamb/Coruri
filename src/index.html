@@ -13,11 +13,69 @@ ul {
 li {
 	margin: 0px;
 	padding: 0px;
+	display: block;
+	position: relative;
+}
+li.rt {
+	background-color:lightgray;
+}
+li > img {
+	display: block;
+	width: 48px;
+	height: 48px;
+}
+li > h3 {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0px;
+	left: 52px;
+}
+li > h4 {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 24px;
+	left: 52px;
+}
+li > p {
+	margin: 0px;
+	padding: 0px;
+}
+li > ol {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+li > ol > li {
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+}
+li > ol:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+li > div {
+}
+li > div > a {
+	display: block;
+	float: right;
+	margin: 3px;
+}
+li > div:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 </style>
 </head>
 <body>
-<h1>Hello, Electron!</h1>
+<h1>a</h1>
 <p id="d"></p>
 <ul id="timeline"><li></li></ul>
 </body>
