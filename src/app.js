@@ -106,20 +106,34 @@ class View
 		return e;
 	}
 
+	getHeadStateObject( id )
+	{
+		const elms = document.getElementById( 'tw' + id ).children;
+		for ( let i = 0 ; i < elms.length ; ++i )
+		{
+			const obj = elms[ i ];
+			if ( obj.tagName === 'SPAN' ){ return obj; }
+		}
+	}
+
 	createButtonFav( id )
 	{
 		const self = this;
 		const a = document.createElement( 'a' );
 		a.href = '#';
 		a.textContent = 'Fav';
-		a.addEventListener( 'click', function()
+		a.onclick = function()
 		{
 			self.twitter.post( 'favorites/create', { id: id, include_entities: false },
 				function( error, tweets, response ) {
+					const obj = self.getHeadStateObject( id );
+					let cname = 'fav';
+					if ( obj.classList.contains( 'rt' ) ){ cname = 'favrt'; }
+					obj.classList.add( cname );
 				}
 			);
 			return false;
-		} );
+		};
 		return a;
 	}
 
@@ -177,4 +191,10 @@ window.onload = function ()
 			});
 		});
 	});
+
+	document.getElementById( 'close' ).onclick = function ()
+	{
+		Remote.getCurrentWindow().close();
+		return false;
+	};
 };
