@@ -1,8 +1,8 @@
 'use strict';
-var Remote = require('remote');
-var Twitter = require('twitter');
-var FS = require('fs');
-var Shell = require('shell');
+var Remote = require( 'remote' );
+var Twitter = require( 'twitter' );
+var FS = require( 'fs' );
+var Shell = require( 'shell' );
 
 class View
 {

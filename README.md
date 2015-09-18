@@ -36,3 +36,9 @@ Create conf.json and write value.
    * Window width
 * height
    * Window height.
+
+### Sample
+
+```
+{"window":true,"width":340,"height":600}
+```

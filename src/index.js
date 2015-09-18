@@ -2,7 +2,7 @@
 
 var app = require( 'app' );
 var BrowserWindow = require( 'browser-window' );
-var FS = require('fs');
+var FS = require( 'fs' );
 
 require( 'crash-reporter' ).start();
 
