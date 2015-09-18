@@ -2,6 +2,7 @@
 
 var app = require( 'app' );
 var BrowserWindow = require( 'browser-window' );
+var FS = require('fs');
 
 require( 'crash-reporter' ).start();
 
@@ -14,11 +15,27 @@ app.on( 'window-all-closed', function()
 
 app.on( 'ready', function()
 {
-    mainWindow = new BrowserWindow( { width: 340, height: 600, /*resizable: false, frame: false*/ } );
-    mainWindow.loadUrl('file://' + __dirname + '/index.html');
+	var FS = require('fs');
 
-    mainWindow.on('closed', function()
-    {
-        mainWindow = null;
-    } );
+	FS.readFile( './conf.json', 'utf8', function ( err, text )
+	{
+		const conf = JSON.parse( text );
+		const opt = { width: 340, height: 600, resizable: false, frame: false };
+
+		if ( conf.window )
+		{
+			delete opt.resizable;
+			delete opt.frame;
+		}
+		if ( conf.width ){ opt.width = parseInt( conf.width ); }
+		if ( conf.height ){ opt.height = parseInt( conf.height ); }
+
+	    mainWindow = new BrowserWindow( opt );
+    	mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
+	    mainWindow.on('closed', function()
+    	{
+        	mainWindow = null;
+    	} );
+	} );
 } );

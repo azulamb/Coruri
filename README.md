@@ -7,7 +7,7 @@ npm -g install electron-packager
 npm i
 ```
 
-## Config
+## Token
 
 Create conf.json or Environment variable.
 
@@ -25,3 +25,14 @@ consumer_secret=CONSUMER_SECRET
 access_token_key=ACCESS_TOKEN
 access_token_secret=ACCESS_TOKEN_SECRET"}
 ```
+
+## Config
+
+Create conf.json and write value.
+
+* window
+   * true = Normal window mode.
+* width
+   * Window width
+* height
+   * Window height.
