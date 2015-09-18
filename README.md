@@ -19,11 +19,20 @@ Create conf.json or Environment variable.
 
 ### Environment variable
 
+#### Linux
 ```
-consumer_key=CONSUMER_KEY
-consumer_secret=CONSUMER_SECRET
-access_token_key=ACCESS_TOKEN
-access_token_secret=ACCESS_TOKEN_SECRET"}
+export consumer_key="CONSUMER_KEY"
+export consumer_secret="CONSUMER_SECRET"
+export access_token_key="ACCESS_TOKEN"
+export access_token_secret="ACCESS_TOKEN_SECRET"
+```
+
+#### Windows
+```
+set consumer_key=CONSUMER_KEY
+set consumer_secret=CONSUMER_SECRET
+set access_token_key=ACCESS_TOKEN
+set access_token_secret=ACCESS_TOKEN_SECRET"
 ```
 
 ## Config
