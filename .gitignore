@@ -24,4 +24,4 @@
 *.ilk
 
 node_modules/*
-app*
+app-*
